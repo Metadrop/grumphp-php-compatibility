@@ -60,7 +60,7 @@ class PhpCompatibilityTask extends AbstractExternalTask
 
         $arguments = $this->processBuilder->createArgumentsForCommand('phpcs');
         $arguments = $this->addArgumentsFromConfig($arguments, $options);
-        $arguments->add('--standard=vendor/wunderio/grumphp-php-compatibility/php-compatibility.xml');
+        $arguments->add('--standard=vendor/metadrop/grumphp-php-compatibility/php-compatibility.xml');
 
       // @todo: Until GrumPHP does not have solution for 'run' command with lots of files we'll use our custom codebase_path parameter with custom check for 'run' command.
       if ($this->isRunningFullCodeBase()) {

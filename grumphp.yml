@@ -8,4 +8,4 @@ parameters:
             ignore_patterns: ['*/vendor/*','*/node_modules/*']
             codebase_path: "."
     extensions:
-        - wunderio\PhpCompatibilityTask\ExtensionLoader
+        - Metadrop\PhpCompatibilityTask\ExtensionLoader
