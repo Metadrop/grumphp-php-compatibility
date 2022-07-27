@@ -48,24 +48,25 @@ class PhpCompatibilityTask extends AbstractExternalTask
     public function run(ContextInterface $context): TaskResultInterface
     {
       $config = $this->getConfig();
+      $options = $config->getOptions();
       $files = $context
         ->getFiles()
-        ->notPaths($config['ignore_patterns'])
-        ->extensions($config['triggered_by']);
+        ->notPaths($options['ignore_patterns'])
+        ->extensions($options['triggered_by']);
 
       if (0 === count($files)) {
         return TaskResult::createSkipped($this, $context);
       }
 
         $arguments = $this->processBuilder->createArgumentsForCommand('phpcs');
-        $arguments = $this->addArgumentsFromConfig($arguments, $config);
+        $arguments = $this->addArgumentsFromConfig($arguments, $options);
         $arguments->add('--standard=vendor/wunderio/grumphp-php-compatibility/php-compatibility.xml');
 
       // @todo: Until GrumPHP does not have solution for 'run' command with lots of files we'll use our custom codebase_path parameter with custom check for 'run' command.
       if ($this->isRunningFullCodeBase()) {
         // Add parallel workers as full code base scans can take long time.
         $arguments->add('--parallel=20');
-        $arguments->add($config['codebase_path']);
+        $arguments->add($options['codebase_path']);
       }
       else {
         $arguments->addFiles($files);
