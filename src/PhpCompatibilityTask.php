@@ -20,7 +20,7 @@ class PhpCompatibilityTask extends AbstractExternalTask
         return 'php_compatibility';
     }
 
-    public function getConfigurableOptions(): OptionsResolver
+    public static function getConfigurableOptions(): OptionsResolver
     {
       $resolver = new OptionsResolver();
       $resolver->setDefaults(
