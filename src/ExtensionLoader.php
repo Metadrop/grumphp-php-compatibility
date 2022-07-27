@@ -21,9 +21,9 @@ class ExtensionLoader implements ExtensionInterface
    * @throws \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
    * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
    */
-  public function load(ContainerBuilder $container)
+  public function load(ContainerBuilder $container) : void
   {
-    return $container->register('task.php_compatibility', PhpCompatibilityTask::class)
+    $container->register('task.php_compatibility', PhpCompatibilityTask::class)
       ->addArgument(new Reference('config'))
       ->addArgument(new Reference('process_builder'))
       ->addArgument(new Reference('formatter.raw_process'))
