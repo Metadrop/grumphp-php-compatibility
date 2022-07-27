@@ -15,4 +15,4 @@ parameters:
 
 ### Composer
 
-``composer require --dev wunderio/grumphp-php-compatibility``
+``composer require --dev metadrop/grumphp-php-compatibility``
