@@ -47,7 +47,7 @@ class PhpCompatibilityTask extends AbstractExternalTask
 
     public function run(ContextInterface $context): TaskResultInterface
     {
-      $config = $this->getConfiguration();
+      $config = $this->getConfig();
       $files = $context
         ->getFiles()
         ->notPaths($config['ignore_patterns'])
