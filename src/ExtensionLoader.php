@@ -1,5 +1,5 @@
 <?php
-namespace metadrop\PhpCompatibilityTask;
+namespace Metadrop\PhpCompatibilityTask;
 
 use GrumPHP\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

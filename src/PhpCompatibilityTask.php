@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace metadrop\PhpCompatibilityTask;
+namespace Metadrop\PhpCompatibilityTask;
 
 use GrumPHP\Collection\ProcessArgumentsCollection;
 use GrumPHP\Runner\TaskResult;
