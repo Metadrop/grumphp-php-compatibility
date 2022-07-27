@@ -1,15 +1,19 @@
 {
-    "name": "wunderio/grumphp-php-compatibility",
+    "name": "metadrop/grumphp-php-compatibility",
     "type": "library",
     "authors": [
         {
             "name": "Hannes Kirsman",
             "email": "hkirsman@gmail.com"
+        },
+        {
+            "name": "Metadrop",
+            "email": "hola@metadrop.net"
         }
     ],
     "autoload": {
         "psr-4": {
-            "wunderio\\PhpCompatibilityTask\\": "src/"
+            "metadrop\\PhpCompatibilityTask\\": "src/"
         }
     },
     "require": {

@@ -1,8 +1,10 @@
 <?php
-namespace wunderio\PhpCompatibilityTask;
+namespace metadrop\PhpCompatibilityTask;
+
 use GrumPHP\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
+
 /**
  * Class ExtensionLoader
  *
