@@ -24,9 +24,8 @@ class ExtensionLoader implements ExtensionInterface
   public function load(ContainerBuilder $container) : void
   {
     $container->register('task.php_compatibility', PhpCompatibilityTask::class)
-      ->addArgument(new Reference('config'))
       ->addArgument(new Reference('process_builder'))
       ->addArgument(new Reference('formatter.raw_process'))
-      ->addTag('grumphp.task', ['config' => 'php_compatibility']);
+      ->addTag('grumphp.task', ['task' => 'php_compatibility']);
   }
 }
