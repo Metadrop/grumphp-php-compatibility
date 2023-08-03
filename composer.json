@@ -19,7 +19,22 @@
     "require": {
         "php": ">=7.0",
         "phpro/grumphp": "*",
-        "phpcompatibility/php-compatibility": "^9.2",
+        "phpcompatibility/php-compatibility": "dev-develop",
         "squizlabs/php_codesniffer": "^3.4"
+    },
+    "require-dev":{
+        "metadrop/composer-comments": "^1.0"
+    },
+    "extra": {
+        "package-comments": {
+            "phpcompatibility/php-compatibility": "Develop version is required because latest versions are from 2019 and are not up to date."
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "metadrop/composer-comments": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpro/grumphp": true
+        }
     }
 }
