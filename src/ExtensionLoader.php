@@ -13,21 +13,12 @@ use Symfony\Component\DependencyInjection\Reference;
  */
 class ExtensionLoader implements ExtensionInterface
 {
+
   /**
-   * @param ContainerBuilder $container
-   *
-   * @return \Symfony\Component\DependencyInjection\Definition
-   * @throws \Exception
-   * @throws \Symfony\Component\DependencyInjection\Exception\BadMethodCallException
-   * @throws \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
-   * @throws \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
-   * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
+   * {@inheritdoc}
    */
-  public function load(ContainerBuilder $container) : void
-  {
-    $container->register('task.php_compatibility', PhpCompatibilityTask::class)
-      ->addArgument(new Reference('process_builder'))
-      ->addArgument(new Reference('formatter.raw_process'))
-      ->addTag('grumphp.task', ['task' => 'php_compatibility']);
+  public function imports(): iterable {
+    yield dirname(__DIR__) . '/config/extension.yml';
   }
+
 }

@@ -1,0 +1,8 @@
+services:
+  metadrop.grumphp_php_compatibility:
+    class: Metadrop\PhpCompatibilityTask\PhpCompatibilityTask
+    arguments:
+      - '@process_builder'
+      - '@formatter.raw_process'
+    tags:
+      - { name: grumphp.task, task: php_compatibility }
